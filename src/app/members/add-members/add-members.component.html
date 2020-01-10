@@ -1,0 +1,60 @@
+<div class="container">
+    <mat-grid-list cols="1" rowHeight="6:2">
+        <mat-grid-tile>
+            <form class="members-form" [formGroup]="membersForm">
+                <span *ngIf="isSaved">
+                    <p>Saved Successfully</p>
+                </span>
+                <mat-form-field class="members-fields">
+                    <input matInput formControlName="firstName" placeholder="First Name" required>
+                    <mat-error>
+                        First Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="members-fields">
+                    <input matInput formControlName="lastName" placeholder="Last Name" required>
+                    <mat-error>
+                        Last Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="members-fields">
+                    <input matInput formControlName="age" placeholder="Age" required>
+                    <mat-error>
+                        Age is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="members-fields">
+                    <input matInput formControlName="phone" placeholder="Enter Phone" required>
+                    <mat-error>
+                        Phone Number is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="members-fields">
+                    <input matInput type="email" formControlName="email" placeholder="EMail" required>
+                    <mat-error>Email is <strong>required</strong></mat-error>
+                </mat-form-field>
+
+                <label id="example-radio-group-label">
+                    <input type="radio" value="Male" formControlName="gender">
+                      <span>male</span>
+                  </label>
+                  <label id="example-radio-group-label">
+                    <input type="radio" value="Female" formControlName="gender">
+                      <span>female</span>
+                  </label>
+                  <button mat-raised-button color="accent" (click)="onAddMembers()">
+                    <mat-icon>add_box</mat-icon>
+                </button>
+                <!-- <div class="button-row">
+                    <p>Submit
+                        
+                        <button mat-raised-button color="accent">
+                            <mat-icon>cancel</mat-icon>
+                        </button>
+                    </p>
+                </div> -->
+            </form>
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

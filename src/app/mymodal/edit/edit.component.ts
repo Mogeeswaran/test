@@ -11,6 +11,7 @@ export class EditComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<EditComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    console.log(this.data);
   }
 
   onNoClick(): void {

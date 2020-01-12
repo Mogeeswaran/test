@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
 import { CdkColumnDef } from '@angular/cdk/table';
+import {MatDialogModule} from '@angular/material';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,7 @@ import { MembersComponent } from './members/members.component';
 import { AddMembersComponent } from './members/add-members/add-members.component';
 import { EditComponent } from './mymodal/edit/edit.component';
 import { DeleteComponent } from './mymodal/delete/delete.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { DeleteComponent } from './mymodal/delete/delete.component';
     MembersComponent,
     AddMembersComponent,
     EditComponent,
-    DeleteComponent
+    DeleteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { DeleteComponent } from './mymodal/delete/delete.component';
     MatFormFieldModule,
     MatCheckboxModule,
     MatInputModule,
+    MatDialogModule,
     MatGridListModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -51,6 +55,7 @@ import { DeleteComponent } from './mymodal/delete/delete.component';
     BrowserAnimationsModule
   ],
   providers: [CdkColumnDef],
+  entryComponents: [EditComponent, DeleteComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

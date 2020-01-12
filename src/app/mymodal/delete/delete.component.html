@@ -1,1 +1,10 @@
-<p>delete works!</p>
+<h1 mat-dialog-title>Row Action :: Delete</h1>
+<div mat-dialog-content>
+  <!-- <mat-form-field> -->
+    Sure to delete?
+  <!-- </mat-form-field> -->
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Delete</button>
+</div>

@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-grid-list cols="1" rowHeight="6:2">
+    <mat-grid-list cols="1" rowHeight="4:2">
         <mat-grid-tile>
             <form class="members-form" [formGroup]="membersForm">
                 <span *ngIf="isSaved">
@@ -42,17 +42,15 @@
                     <input type="radio" value="Female" formControlName="gender">
                       <span>female</span>
                   </label>
-                  <button mat-raised-button color="accent" (click)="onAddMembers()">
+                  <br>
+                  <br>
+                  <button mat-raised-button  (click)="onAddMembers()" style="margin-right: 10px;">
                     <mat-icon>add_box</mat-icon>
-                </button>
-                <!-- <div class="button-row">
-                    <p>Submit
-                        
-                        <button mat-raised-button color="accent">
-                            <mat-icon>cancel</mat-icon>
-                        </button>
-                    </p>
-                </div> -->
+                  </button>
+                  <button mat-raised-button>
+                      cancel
+                  </button>
+                
             </form>
 
         </mat-grid-tile>

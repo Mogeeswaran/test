@@ -11,7 +11,7 @@ export class AddMembersComponent implements OnInit {
 
   isSaved: boolean;
   membersForm: FormGroup;
-  status :any;
+  
 
   constructor(private formbuilder: FormBuilder, private membersService: MembersService ) { }
 
@@ -19,17 +19,17 @@ export class AddMembersComponent implements OnInit {
     this.membersForm = this.formbuilder.group({
       firstName:['',Validators.required],
       lastName:['',Validators.required],
-      age:['',Validators.required],
+      age:['',Validators.compose([Validators.required, Validators.maxLength(3)])],
       phone:['',Validators.required],
-      email:['',Validators.required, Validators.email],
+      email:['',Validators.compose([Validators.required, Validators.email])],
       gender: ['', Validators.required]
     });
   }
 
     async onAddMembers(){
     console.log(this.membersForm.value);
-   this.status =  await this.membersService.addMembers(this.membersForm.value);
-    // console.log(status);
+   const status =  await this.membersService.addMembers(this.membersForm.value)
+    console.log('StatusData'+status);
     if(status){
       this.isSaved = true;
     }
